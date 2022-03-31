@@ -1,4 +1,4 @@
-package Task1;
+package AOOP_Assignmet2.Task1;
 
 public class Test{
 
