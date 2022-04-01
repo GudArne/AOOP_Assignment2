@@ -1,14 +1,19 @@
-package AOOP_Assignment2.Task1;
+package Task1;
 
-public class Test{
+class Signal {
+    private int signal;
 
-    int test;
-    Test(int test){
-        this.test = test;
-    }
-    public static void main(String[] args) {
-        Test test = new Test(1);
-        Test test2 = new Test(2);
+    public Signal(int signal) {
+        this.signal = signal;
     }
 
+    public int getSignal() {
+        return signal;
+    }
+
+    public void setSignal(int signal) {
+        this.signal = signal;
+    }
 }
+
+
