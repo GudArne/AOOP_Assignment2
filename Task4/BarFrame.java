@@ -87,32 +87,33 @@ public class BarFrame extends JFrame implements ChangeListener, MouseListener
    private static final int ICON_HEIGHT = 200;
    @Override
    public void mouseClicked(MouseEvent e) {
-      int x = e.getX();
-      int y = e.getY();
-
-      if(y < 50 +28){
-         System.out.println("This is bar 1");
-      }
-      else if(y < 50*2 +28 && y > 50 +28){
-         System.out.println("This is bar 2");
-      }
-      else if(y < 50*3 +28 && y > 100 +28){
-         System.out.println("This is bar 3");
-      }
-      else if(y < 50*4 +28 && y > 150 +28){
-         System.out.println("This is bar 4");
-      }
-
-
-
-      
-   }
-   //JOptionPane.showMessageDialog(this, "The value of the data is " + a.get(i) + "\n" + "this is Y: " + e.getY() + "\n" + "this is X: " + e.getX());
-
-   @Override
-   public void mousePressed(MouseEvent e) {
       // TODO Auto-generated method stub
       
+   }
+   @Override
+   public void mousePressed(MouseEvent e) {
+      double x = e.getX();
+      int y = e.getY();
+      // get max value of bars
+      double max =  (a.get(0)).doubleValue();
+      for (Double v : a)
+      {
+         double val = v.doubleValue();
+         if (val > max)
+            max = val;
+      }
+      
+      if(y < 50 +28 && y > 0 + 28)
+         dataModel.update(0, x/200 * max);
+      
+      else if(y < 50*2 +28 && y > 50 +28)
+         dataModel.update(1, x/200 * max);
+      
+      else if(y < 50*3 +28 && y > 100 +28)
+         dataModel.update(2, x/200 * max);
+      
+      else if(y < 50*4 +28 && y > 150 +28)
+         dataModel.update(3, x/200 * max);
    }
 
    @Override

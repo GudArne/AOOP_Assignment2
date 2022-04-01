@@ -2,6 +2,9 @@ package Task4;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
+
 import java.util.ArrayList;
 
 /**
@@ -49,6 +52,20 @@ public class TextFrame extends JFrame
             }
          }
       };
+
+      // Update the text fields to the frame
+      ChangeListener cl = new ChangeListener() {
+         public void stateChanged(ChangeEvent e)
+         {
+            ArrayList<Double> a = dataModel.getData();
+            for (int i = 0; i < a.size(); i++)
+            {
+               String text = String.format("%.2f", a.get(i)); // Round to two decimals
+               fieldList[i].setText(text);
+            }
+         }
+      };
+      dataModel.attach(cl);
 
       final int FIELD_WIDTH = 11;
       for (int i = 0; i < a.size(); i++)
