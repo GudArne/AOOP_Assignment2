@@ -8,19 +8,10 @@ public class SortOnThree extends FilterTemplate {
         
         return false;
     }
+
     @Override
-    public String[] filterArray(String[] a) {
-        String[] tempList = new String[a.length];
-        int j = 0;
-        for (int i = 0; i < a.length; i++) {
-            if(accept(a[i])){
-                tempList[j++] = a[i];
-            }
-        }
-        String[] retList = new String[j];
-        for (int i = 0; i < j; i++) {
-            retList[i] = tempList[i];
-        }
-        return retList;
-    }    
+    public String[] getFStrings(String[] s) {
+        // TODO Auto-generated method stub
+        return super.getFStrings(s);
+    }
 }
