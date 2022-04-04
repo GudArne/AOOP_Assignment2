@@ -102,7 +102,7 @@ public class BarFrame extends JFrame implements ChangeListener, MouseListener
          if (val > max)
             max = val;
       }
-      
+
       if(y < 50 +28 && y > 0 + 28)
          dataModel.update(0, x/200 * max);
       

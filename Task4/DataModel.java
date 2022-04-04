@@ -43,7 +43,7 @@ public class DataModel
    */
    public void update(int location, double value)
    {
-      data.set(location, new Double(value));
+      data.set(location, value);
       for (ChangeListener l : listeners)
       {
          l.stateChanged(new ChangeEvent(this));

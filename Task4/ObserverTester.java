@@ -14,10 +14,10 @@ public class ObserverTester
    {
       ArrayList<Double> data = new ArrayList<Double>();
 
-      data.add(new Double(33.0));
-      data.add(new Double(44.0));
-      data.add(new Double(22.0));
-      data.add(new Double(22.0));
+      data.add(33.0);
+      data.add(44.0);
+      data.add(22.0);
+      data.add(22.0);
 
       DataModel model = new DataModel(data);
 
