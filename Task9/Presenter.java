@@ -11,15 +11,5 @@ public abstract class Presenter {
     }
     public abstract void eastButtonPressed();
     public abstract void westButtonPressed();
-
-
-    // Return a JLabel with the image in the given filename
-    public Component createCenterComponent(String file) {
-        ImageIcon icon = new ImageIcon("Task9/Images/shrek.png");
-        JLabel imageLabel = new JLabel(icon);
-        imageLabel.setPreferredSize(new Dimension(550, 400));
-        return imageLabel;
-    }
-
     
 }

@@ -1,17 +1,24 @@
 package Task9;
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.awt.event.*;
 
-public class PresenterWindow extends Presenter {
+public class PresenterWindow extends ImagePresenter implements ActionListener {
 
 	private static JTextArea jta;
     private JFrame frame;
+    private static JPanel panel;
     private final Dimension dimension = new Dimension(550, 400);
-
+    JButton leftBtn;
+    JButton rightBtn;
+    
+    ArrayList<String> textArr = new ArrayList<>();
+    
 
 	public PresenterWindow(){
         frame = new JFrame();
-        JPanel panel = new JPanel(new GridBagLayout());
+        panel = new JPanel(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         panel.setSize(600, 600);
 
@@ -23,20 +30,29 @@ public class PresenterWindow extends Presenter {
         c.gridwidth = 3;
         c.gridheight = 1;
         c.fill = GridBagConstraints.BOTH;
-        panel.add(createCenterComponent("Task9/Images/shrek.png"), c);
+
+        addImage("Task9/Images/shrek.png");
+        addImage("Task9/Images/hh.png");
+        addImage("Task9/Images/example.png");
+        addImage("Task9/Images/cat.jpeg");
+        showImage();
 
         c.gridx = 0;
         c.gridy = 1;
         c.gridwidth = 1;
         c.gridheight = 1;
         c.fill = GridBagConstraints.VERTICAL;
-        panel.add(new JButton("Left"), c);
+        leftBtn = new JButton("Left");
+        panel.add(leftBtn, c);
+        leftBtn.addActionListener(this);
 
         c.gridx = 1;
         c.gridy = 1;
         c.gridwidth = 1;
         c.gridheight = 1;
-        panel.add(new JButton("Right"), c);
+        rightBtn = new JButton("Right");
+        panel.add(rightBtn, c);
+        rightBtn.addActionListener(this);
 
         c.gridx = 2;
         c.gridy = 1;
@@ -57,14 +73,34 @@ public class PresenterWindow extends Presenter {
 
     @Override
     public void eastButtonPressed() {
-        // TODO Auto-generated method stub
-        
+        if(imgIndex < imgArr.size()-1){
+            jta.setText("Next slide\n");
+            imgIndex++;
+            showImage();
+        }
     }
 
     @Override
     public void westButtonPressed() {
-        // TODO Auto-generated method stub
-        
+        if(imgIndex > 0) {
+            jta.setText("Previous slide\n");
+            imgIndex--;
+            showImage();
+        }
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+        if(e.getSource() == leftBtn){
+            westButtonPressed();
+        }
+        else if(e.getSource() == rightBtn){
+            eastButtonPressed();
+        }
+    }
+
+    public static Container getPanel() {
+        return panel;
+    }
 }
