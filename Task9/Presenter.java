@@ -16,6 +16,4 @@ public abstract class Presenter {
     // return a Canvas instance
     // that can display images
     }
-
-    
 }
