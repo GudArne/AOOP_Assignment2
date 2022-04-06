@@ -8,10 +8,4 @@ public class SortOnThree extends FilterTemplate {
         
         return false;
     }
-
-    @Override
-    public String[] getFStrings(String[] s) {
-        // TODO Auto-generated method stub
-        return super.getFStrings(s);
-    }
 }

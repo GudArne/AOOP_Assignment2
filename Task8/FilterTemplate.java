@@ -6,13 +6,9 @@ public abstract class FilterTemplate
     {
         accept(null);
         filterArray(null);
-        getFStrings(null);
     }
 
-    public  boolean accept(String s)
-    {
-        return false;
-    }
+    abstract public  boolean accept(String s);
     private String [] filterArray(String [] a)
     {
         String[] tempList = new String[a.length];
@@ -29,8 +25,4 @@ public abstract class FilterTemplate
         return retList;
     }
 
-    public String [] getFStrings (String [] s)
-    {
-        return filterArray(s);
-    }
 }
