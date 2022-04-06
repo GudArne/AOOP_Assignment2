@@ -9,6 +9,7 @@ public abstract class FilterTemplate
     }
 
     abstract public  boolean accept(String s);
+    
     private String [] filterArray(String [] a)
     {
         String[] tempList = new String[a.length];
@@ -24,5 +25,4 @@ public abstract class FilterTemplate
         }
         return retList;
     }
-
 }
