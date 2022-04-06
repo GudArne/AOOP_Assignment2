@@ -1,17 +1,47 @@
 package Task9;
+import java.awt.*;
+import java.util.ArrayList;
 
-public abstract class ImagePresenter{
-    public void showImage(String filename){
-        // TODO: implement this method
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
+
+public abstract class ImagePresenter extends Presenter {
+
+    ArrayList<String> imgArr = new ArrayList<>();
+    int imgIndex = 0;
+    JLabel imgLabel;
+
+    public void showImage(){
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx = 0;
+        c.gridy = 0;
+        c.gridwidth = 3;
+        c.gridheight = 1;
+        c.fill = GridBagConstraints.BOTH;
+
+        if(getImage() != null)
+            PresenterWindow.getPanel().remove(getImage());
+
+        ImageIcon icon = new ImageIcon(imgArr.get(imgIndex));
+        imgLabel = new JLabel(icon);
+        imgLabel.setPreferredSize(new Dimension(550, 400));
+
+        PresenterWindow.getPanel().add(imgLabel, c);
     }
-    public void showText(String text){
-        // TODO: implement this method
-
+    public void addImage(String filename){
+        imgArr.add(filename);
     }
-    public abstract void northButtonPressed();
-    public abstract void eastButtonPressed();
-    public abstract void southButtonPressed();
-    public abstract void westButtonPressed();
+    public Component getImage(){
+        return imgLabel;
+    }
+
+    // Return a JLabel with the image in the given filename
+    public Component createCenterComponent(String file) {
+        ImageIcon icon = new ImageIcon("Task9/Images/shrek.png");
+        JLabel imageLabel = new JLabel(icon);
+        imageLabel.setPreferredSize(new Dimension(550, 400));
+        return imageLabel;
+    }
     
 }
