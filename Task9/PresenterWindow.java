@@ -14,7 +14,6 @@ public class PresenterWindow extends ImagePresenter implements ActionListener {
     JButton rightBtn;
     
     ArrayList<String> textArr = new ArrayList<>();
-    
 
 	public PresenterWindow(){
         frame = new JFrame();
@@ -23,7 +22,6 @@ public class PresenterWindow extends ImagePresenter implements ActionListener {
         panel.setSize(600, 600);
 
 		jta = new JTextArea(10, 10);
-		jta.append("This is some example text for this presentation.\n");
 
         c.gridx = 0;
         c.gridy = 0;
@@ -35,6 +33,11 @@ public class PresenterWindow extends ImagePresenter implements ActionListener {
         addImage("Task9/Images/hh.png");
         addImage("Task9/Images/example.png");
         addImage("Task9/Images/cat.jpeg");
+        addText("This is text for slide 1");
+        addText("This is text for slide 2");
+        addText("This is text for slide 3");
+        addText("This is text for slide 4");
+
         showImage();
 
         c.gridx = 0;
@@ -54,12 +57,9 @@ public class PresenterWindow extends ImagePresenter implements ActionListener {
         panel.add(rightBtn, c);
         rightBtn.addActionListener(this);
 
-        c.gridx = 2;
-        c.gridy = 1;
-        c.gridwidth = 1;
-        c.gridheight = 1;
-        c.fill = GridBagConstraints.BOTH;
-        panel.add(jta,c);
+
+        panel.add(jta,textStyle());
+        updateText(imgIndex);
 
         frame.setSize(600,600);
         frame.add(panel);
@@ -67,7 +67,7 @@ public class PresenterWindow extends ImagePresenter implements ActionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
-	public static JTextArea getTextArea() {
+	public JTextArea getTextArea() {
 		return jta;
 	}
 
@@ -77,6 +77,7 @@ public class PresenterWindow extends ImagePresenter implements ActionListener {
             jta.setText("Next slide\n");
             imgIndex++;
             showImage();
+            updateText(imgIndex);
         }
     }
 
@@ -86,6 +87,7 @@ public class PresenterWindow extends ImagePresenter implements ActionListener {
             jta.setText("Previous slide\n");
             imgIndex--;
             showImage();
+            updateText(imgIndex);
         }
     }
 
@@ -122,8 +124,17 @@ public class PresenterWindow extends ImagePresenter implements ActionListener {
 
     @Override
     public ArrayList<String> getText() {
-        // TODO Auto-generated method stub
-        return null;
+        return textArr;
     }
 
+    @Override
+    public GridBagConstraints textStyle() {
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx = 2;
+        c.gridy = 1;
+        c.gridwidth = 1;
+        c.gridheight = 1;
+        c.fill = GridBagConstraints.BOTH;
+        return c;
+    }
 }

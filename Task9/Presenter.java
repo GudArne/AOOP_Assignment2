@@ -4,21 +4,25 @@ import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 public abstract class Presenter {
     
     public abstract void eastButtonPressed();
     public abstract void westButtonPressed();
     public abstract ArrayList<String> getText();
+    public abstract void addText(String text);
+    public abstract JTextArea getTextArea();
+    public abstract Container getPanel();
+    public abstract GridBagConstraints textStyle();
 
 
-    public void showText(String text) {
-        PresenterWindow.getTextArea().append(text);
+    public void updateText(int index) {
+
+        getTextArea().setText(getText().get(index));
 
     }
 
-    public void addText(String text){
-        getText().add(text);
-    }
     
 }
