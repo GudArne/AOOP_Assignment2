@@ -100,7 +100,30 @@ public class PresenterWindow extends ImagePresenter implements ActionListener {
         }
     }
 
-    public static Container getPanel() {
+    @Override
+    public Container getPanel() {
         return panel;
     }
+    @Override
+    public GridBagConstraints imgStyle(){
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx = 0;
+        c.gridy = 0;
+        c.gridwidth = 3;
+        c.gridheight = 1;
+        c.fill = GridBagConstraints.BOTH;
+        return c;
+    }
+
+    @Override
+    public void addText(String text){
+        getText().add(text);
+    }
+
+    @Override
+    public ArrayList<String> getText() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
 }
