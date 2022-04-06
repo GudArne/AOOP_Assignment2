@@ -6,6 +6,7 @@ public abstract class FilterTemplate
     {
         accept(null);
         filterArray(null);
+        getFStrings(null);
     }
 
     public  boolean accept(String s)

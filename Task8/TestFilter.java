@@ -8,8 +8,6 @@ public class TestFilter {
         //ft.filterArray(s);
         String [] sTest =  ft.getFStrings(s);
         //String [] sTest2 = ft5.filterArray(s);
-        
-
     }
 
 }
