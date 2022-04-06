@@ -6,8 +6,6 @@ public class TestFilter {
         //FilterTemplate ft5 = new SortOnFive();
         String [] s = {"this", "is", "a", "test"};
         //ft.filterArray(s);
-        String [] sTest =  ft.getFStrings(s);
-        //String [] sTest2 = ft5.filterArray(s);
     }
 
 }
