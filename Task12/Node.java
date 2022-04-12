@@ -44,6 +44,8 @@ public class Node<T> implements Tree<T> {
 		}
 		return n;
 	}
+	*/
+
 
 	@Override
 	public String show(int level) {
@@ -60,7 +62,6 @@ public class Node<T> implements Tree<T> {
 		
 		
 	}
-	*/
 
 	@Override
 	public T getValue() {

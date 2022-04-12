@@ -28,6 +28,7 @@ public class Leaf<T> implements Tree<T> {
 	public int nrOfValues() {
 		return 1;
 	}
+	*/
 
 	@Override
 	public String show(int level) {
@@ -38,7 +39,6 @@ public class Leaf<T> implements Tree<T> {
 		}
 		return indent+value.toString();
 	}
-	*/
 
 	@Override
 	public T getValue() {

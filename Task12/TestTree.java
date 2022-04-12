@@ -37,13 +37,16 @@ public class TestTree {
 	    NumLeaves<String> nlv = new NumLeaves<String>();
 
 		//System.out.println("Number of leaves in t: "+nlv.visitTree(t));
-		System.out.println("Number of leaves in t: "+t.accept(nlv, null));
+		System.out.println("Number of values in t: "+t.accept(nlv, null));
 
 
 	    ListLeaves<String> llv = new ListLeaves<String>();
 
 		//System.out.println("Number of leaves in t: "+nlv.visitTree(t));
-		System.out.println("All leaves in t: "+t.accept(llv, new ArrayList<String>()));
+		System.out.println("All values in t: "+t.accept(llv, new ArrayList<String>()));
+		Visitor visitor = new Visitor();
+		String result = "";
+		System.out.println(t.accept(visitor, result));
 
 		// List<String> dfs = t.depthFirst();
 		// for (String s : dfs)
