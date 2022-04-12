@@ -16,7 +16,7 @@ public abstract class ImagePresenter extends Presenter {
     public abstract GridBagConstraints imgStyle();
 
     public void showImage(){
-        if(getImage() != null)
+        if(getImage() != null) // Remove previous image
             getPanel().remove(getImage());
 
         ImageIcon icon = new ImageIcon(imgArr.get(imgIndex));
@@ -31,13 +31,4 @@ public abstract class ImagePresenter extends Presenter {
     public Component getImage(){
         return imgLabel;
     }
-
-    // Return a JLabel with the image in the given filename
-    // public Component createCenterComponent(String file) {
-    //     ImageIcon icon = new ImageIcon("Task9/Images/shrek.png");
-    //     JLabel imageLabel = new JLabel(icon);
-    //     imageLabel.setPreferredSize(new Dimension(550, 400));
-    //     return imageLabel;
-    // }
-    
 }
