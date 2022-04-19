@@ -22,6 +22,17 @@ public class Signal {
 		});
 		t.start();
 	}
+	// public Signal(final JTextArea jta) {
+	// 	Timer t = new Timer(SAMPLING, new ActionListener() {
+	// 		public void actionPerformed(ActionEvent e) {
+	// 			//double amplitude = Math.random() * 10;
+	// 			double amplitude = sampler.read();
+	// 			jta.append(""+String.format("%.6f", amplitude)+"\n");
+	// 			printStars((int)amplitude);
+	// 		}
+	// 	});
+	// 	t.start();
+	// }
 	
 	private static void printStars(int num) {
 		for(int i=0; i < num; i++)
