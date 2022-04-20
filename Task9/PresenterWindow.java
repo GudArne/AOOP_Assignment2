@@ -19,15 +19,8 @@ public class PresenterWindow extends ImagePresenter implements ActionListener {
         frame = new JFrame();
         panel = new JPanel(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
-        panel.setSize(600, 600);
 
 		jta = new JTextArea(10, 10);
-
-        c.gridx = 0;
-        c.gridy = 0;
-        c.gridwidth = 3;
-        c.gridheight = 1;
-        c.fill = GridBagConstraints.BOTH;
 
         addImage("Task9/Images/shrek.png");
         addImage("Task9/Images/hh.png");
@@ -56,7 +49,6 @@ public class PresenterWindow extends ImagePresenter implements ActionListener {
         rightBtn = new JButton("Right");
         panel.add(rightBtn, c);
         rightBtn.addActionListener(this);
-
 
         panel.add(jta,textStyle());
         updateText(imgIndex);
@@ -106,16 +98,6 @@ public class PresenterWindow extends ImagePresenter implements ActionListener {
     public Container getPanel() {
         return panel;
     }
-    @Override
-    public GridBagConstraints imgStyle(){
-        GridBagConstraints c = new GridBagConstraints();
-        c.gridx = 0;
-        c.gridy = 0;
-        c.gridwidth = 3;
-        c.gridheight = 1;
-        c.fill = GridBagConstraints.BOTH;
-        return c;
-    }
 
     @Override
     public void addText(String text){
@@ -136,5 +118,28 @@ public class PresenterWindow extends ImagePresenter implements ActionListener {
         c.gridheight = 1;
         c.fill = GridBagConstraints.BOTH;
         return c;
+    }
+
+    @Override
+    public GridBagConstraints imgStyle(){
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx = 0;
+        c.gridy = 0;
+        c.gridwidth = 3;
+        c.gridheight = 1;
+        c.fill = GridBagConstraints.BOTH;
+        return c;
+    }
+
+    @Override
+    public void northButtonPressed() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void southButtonPressed() {
+        // TODO Auto-generated method stub
+        
     }
 }

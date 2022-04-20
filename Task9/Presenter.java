@@ -11,6 +11,8 @@ public abstract class Presenter {
     
     public abstract void eastButtonPressed();
     public abstract void westButtonPressed();
+    public abstract void northButtonPressed();
+    public abstract void southButtonPressed();
     public abstract ArrayList<String> getText();
     public abstract void addText(String text);
     public abstract JTextArea getTextArea();
