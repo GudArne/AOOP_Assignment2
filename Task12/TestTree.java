@@ -43,7 +43,7 @@ public class TestTree {
 	    ListLeaves<String> llv = new ListLeaves<String>();
 
 		//System.out.println("Number of leaves in t: "+nlv.visitTree(t));
-		System.out.println("All values in t: "+t.accept(llv, new ArrayList<String>()));
+		//System.out.println("All values in t: "+t.accept(llv, new ArrayList<String>()));
 		Visitor visitor = new Visitor();
 		String result = "";
 		System.out.println(t.accept(visitor, result));

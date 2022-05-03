@@ -46,7 +46,7 @@ public class Node<T> implements Tree<T> {
 	}
 	*/
 
-
+	/*
 	@Override
 	public String show(int level) {
 		String result = "";
@@ -62,6 +62,7 @@ public class Node<T> implements Tree<T> {
 		
 		
 	}
+	*/
 
 	@Override
 	public T getValue() {

@@ -66,7 +66,7 @@ public class PresenterWindow extends ImagePresenter implements ActionListener {
     @Override
     public void eastButtonPressed() {
         if(imgIndex < imgArr.size()-1){
-            jta.setText("Next slide\n");
+            //jta.setText("Next slide\n");
             imgIndex++;
             showImage();
             updateText(imgIndex);
@@ -76,7 +76,7 @@ public class PresenterWindow extends ImagePresenter implements ActionListener {
     @Override
     public void westButtonPressed() {
         if(imgIndex > 0) {
-            jta.setText("Previous slide\n");
+            //jta.setText("Previous slide\n");
             imgIndex--;
             showImage();
             updateText(imgIndex);

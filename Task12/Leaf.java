@@ -30,6 +30,7 @@ public class Leaf<T> implements Tree<T> {
 	}
 	*/
 
+	/*
 	@Override
 	public String show(int level) {
 		String indent = "";
@@ -39,6 +40,7 @@ public class Leaf<T> implements Tree<T> {
 		}
 		return indent+value.toString();
 	}
+	*/
 
 	@Override
 	public T getValue() {
